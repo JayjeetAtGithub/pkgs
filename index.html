@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Popper Dev</title>
+    </head>
+    <body>
+        <a class="copy_text" data-toggle="tooltip" href="https://popper-dev.netlify.app/install.sh">Install Singularity</a>
+        <script src="https://code.jquery.com/jquery-3.5.0.slim.min.js" integrity="sha256-MlusDLJIP1GRgLrOflUQtshyP0TwT/RHXsI1wWGnQhs=" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            $('.copy_text').click(function (e) {
+                e.preventDefault();
+                var copyText = $(this).attr('href');
+
+                document.addEventListener('copy', function(e) {
+                    e.clipboardData.setData('text/plain', copyText);
+                    e.preventDefault();
+                }, true);
+
+                document.execCommand('copy');  
+            });
+        </script>
+    </body>
+</html>
