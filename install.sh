@@ -22,6 +22,7 @@ cd singularity
 git checkout v3.5.3
 ./mconfig && cd ./builddir && make && sudo make install
 
+# Check singularity installation
 singularity version
 
 # Remove installation files
