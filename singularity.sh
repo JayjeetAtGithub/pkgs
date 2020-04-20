@@ -1,8 +1,8 @@
 #!/bin/sh
 set -e
 
-mkdir -p /tmp/popper_dev
-cd /tmp/popper_dev
+mkdir -p /tmp/pkgs
+cd /tmp/pkgs
 
 # Install Go
 wget https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz
@@ -26,6 +26,6 @@ git checkout v3.5.3
 singularity version
 
 # Remove installation files
-rm -rf /tmp/popper_dev
+rm -rf /tmp/pkgs
 cd $HOME
 echo "Singularity installed successfully !"
