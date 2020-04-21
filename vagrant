@@ -1,0 +1,23 @@
+#!/bin/sh
+set -e
+
+mkdir -p /tmp/pkgs
+cd /tmp/pkgs
+
+# Install some prerequisites
+sudo apt-get install -y build-essential software-properties-common
+
+# Install virtualbox
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+
+sudo add-apt-repository "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib"
+
+sudo apt update
+sudo apt install -y virtualbox-6.0
+
+# Install vagrant
+wget https://releases.hashicorp.com/vagrant/2.2.7/vagrant_2.2.7_x86_64.deb
+sudo dpkg -i vagrant_2.2.7_x86_64.deb
+
+echo "Vagrant and Virtualbox installed successfully !"
