@@ -28,4 +28,4 @@ singularity version
 # Remove installation files
 rm -rf /tmp/pkgs
 cd $HOME
-echo "Singularity installed successfully !"
+echo "singularity installed successfully !"

@@ -22,4 +22,4 @@ sudo dpkg -i vagrant_2.2.7_x86_64.deb
 
 rm -rf /tmp/pkgs
 cd $HOME
-echo "Vagrant and Virtualbox installed successfully !"
+echo "vagrant and virtualbox installed successfully !"
