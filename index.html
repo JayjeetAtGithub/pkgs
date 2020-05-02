@@ -3,25 +3,12 @@
         <title>My Packages</title>
     </head>
     <body>
-        <a class="copy_text" data-toggle="tooltip" href="https://pkgs.netlify.app/singularity">Install Singularity</a>
+        <a href="https://pkgs.netlify.app/singularity">Install Singularity</a>
         <br>
-        <a class="copy_text" data-toggle="tooltip" href="https://pkgs.netlify.app/vagrant">Install Vagrant + Virtualbox</a>
+        <a href="https://pkgs.netlify.app/vagrant">Install Vagrant + Virtualbox</a>
         <br>
-        <a class="copy_text" data-toggle="tooltip" href="https://get.docker.com">Install Docker</a>
-
-        <script src="https://code.jquery.com/jquery-3.5.0.slim.min.js" integrity="sha256-MlusDLJIP1GRgLrOflUQtshyP0TwT/RHXsI1wWGnQhs=" crossorigin="anonymous"></script>
-        <script type="text/javascript">
-            $('.copy_text').click(function (e) {
-                e.preventDefault();
-                var copyText = $(this).attr('href');
-
-                document.addEventListener('copy', function(e) {
-                    e.clipboardData.setData('text/plain', copyText);
-                    e.preventDefault();
-                }, true);
-
-                document.execCommand('copy');  
-            });
-        </script>
+        <a href="https://get.docker.com">Install Docker</a>
+        <br>
+        <a href="https://pkgs.netlify.app/nvidia-docker">Install Nvidia-Docker</a>
     </body>
 </html>
