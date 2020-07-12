@@ -4,15 +4,19 @@ set -ex
 mkdir -p /tmp/pkgs
 cd /tmp/pkgs
 
+# download and extract the tar
 wget http://www.mpich.org/static/downloads/3.3.2/mpich-3.3.2.tar.gz
 tar -xzf mpich-3.3.2.tar.gz
 
+# configure
 cd mpich-3.3.2
 ./configure --disable-fortran
 
+# build and install
 make
 sudo make install
 
+# check the installation
 mpiexec --version
 
 rm -rf /tmp/pkgs
