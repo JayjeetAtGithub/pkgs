@@ -1,0 +1,21 @@
+#!/bin/bash
+set -ex
+
+mkdir -p /tmp/pkgs
+cd /tmp/pkgs
+
+wget http://www.mpich.org/static/downloads/3.3.2/mpich-3.3.2.tar.gz
+tar -xzf mpich-3.3.2.tar.gz
+
+cd mpich-3.3.2
+./configure --disable-fortran
+
+make
+sudo make install
+
+mpiexec --version
+
+rm -rf /tmp/pkgs
+cd $HOME
+
+echo "mpich installed successfully !"
