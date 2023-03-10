@@ -1,0 +1,31 @@
+#!/bin/bash
+set -ex
+
+PUBLIC_IP=$1
+
+# install code-server 
+curl -fsSL https://code-server.dev/install.sh | sh
+
+# create a systemd service
+sudo systemctl enable --now code-server@$USER
+
+# update the systemd service config
+cat > /usr/lib/systemd/system/code-server@.service << EOF
+[Unit]
+Description=code-server
+After=network.target
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/code-server --bind-addr $PUBLIC_IP --auth none
+Restart=always
+User=%i
+
+[Install]
+WantedBy=default.target
+EOF
+
+# start code-server
+systemctl daemon-reload
+sudo systemctl start code-server@$USER
+sudo systemctl status code-server@$USER
