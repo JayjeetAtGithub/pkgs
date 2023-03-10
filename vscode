@@ -17,7 +17,7 @@ After=network.target
 
 [Service]
 Type=exec
-ExecStart=/usr/bin/code-server --bind-addr $PUBLIC_IP --auth none
+ExecStart=/usr/bin/code-server --bind-addr $PUBLIC_IP:8002 --auth none
 Restart=always
 User=%i
 
@@ -29,3 +29,5 @@ EOF
 systemctl daemon-reload
 sudo systemctl start code-server@$USER
 sudo systemctl status code-server@$USER
+
+echo "code-server is running on http://$PUBLIC_IP:8002"
