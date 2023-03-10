@@ -28,6 +28,5 @@ EOF
 # start code-server
 systemctl daemon-reload
 sudo systemctl start code-server@$USER
-sudo systemctl status code-server@$USER
 
 echo "code-server is running on http://$PUBLIC_IP:8002"
